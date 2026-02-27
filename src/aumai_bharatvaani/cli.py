@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import sys
+
 import click
 
 from aumai_bharatvaani.core import (
@@ -67,10 +69,14 @@ def ner(text: str, language: str) -> None:
 @click.option("--to", "target_script", required=True, help="Target script (e.g. latin).")
 def transliterate(text: str, source_script: str, target_script: str) -> None:
     """Transliterate Indic text between scripts."""
-    if target_script.lower() == "latin":
-        result = _transliterator.to_latin(text, source_script)
-    else:
-        result = _transliterator.between_scripts(text, source=source_script, target=target_script)
+    try:
+        if target_script.lower() == "latin":
+            result = _transliterator.to_latin(text, source_script)
+        else:
+            result = _transliterator.between_scripts(text, source=source_script, target=target_script)
+    except ValueError as exc:
+        click.echo(f"Error: {exc}", err=True)
+        sys.exit(1)
     click.echo(result)
 
 

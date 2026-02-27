@@ -38,7 +38,6 @@ SCHEDULED_LANGUAGES: dict[str, IndicLanguage] = {
     "sa": IndicLanguage(code="sa", name="Sanskrit", name_native="संस्कृतम्", script="Devanagari", speakers_millions=0.025),
     "sat": IndicLanguage(code="sat", name="Santali", name_native="ᱥᱟᱱᱛᱟᱲᱤ", script="Ol Chiki", speakers_millions=7.6),
     "sd": IndicLanguage(code="sd", name="Sindhi", name_native="سنڌي", script="Perso-Arabic", speakers_millions=25.0),
-    "si": IndicLanguage(code="si", name="Sinhala", name_native="සිංහල", script="Sinhala", speakers_millions=16.0),
     "ta": IndicLanguage(code="ta", name="Tamil", name_native="தமிழ்", script="Tamil", speakers_millions=75.0),
     "te": IndicLanguage(code="te", name="Telugu", name_native="తెలుగు", script="Telugu", speakers_millions=82.0),
     "ur": IndicLanguage(code="ur", name="Urdu", name_native="اردو", script="Perso-Arabic", speakers_millions=230.0),
